@@ -7,7 +7,8 @@ try:
     iss_now = requests.get('http://api.open-notify.org/iss-now.json').json()
     astronauts = requests.get('http://api.open-notify.org/astros.json').json()
     lat, lon = iss_now['iss_position']['latitude'], iss_now['iss_position']['longitude']
-    print(f"ISS is currently at {lat} latitude and {lon} longitude.\nThe crew currently aboard consist of:")
+    print(
+        f"ISS is currently at {lat} latitude and {lon} longitude.\nThe crew currently aboard consist of:")
     for crew in astronauts['people']:
         print(" - " + crew['name'])
 except:
